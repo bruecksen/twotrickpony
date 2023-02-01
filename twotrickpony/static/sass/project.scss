@@ -1,6 +1,14 @@
 @import "custom_bootstrap_vars";
 @import "~bootstrap/scss/bootstrap";
 
+@font-face {
+  font-family: 'rentukkaregular';
+  src: url('../fonts/rentukka-regular-webfont.woff2') format('woff2'),
+       url('../fonts/rentukka-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
 
 // project specific CSS goes here
 
@@ -17,21 +25,150 @@ $pink: #f2dede;
 $dark-pink: #eed3d7;
 $red: #b94a48;
 
-////////////////////////////////
-		//Alerts//
-////////////////////////////////
 
-// bootstrap alert CSS, translated to the django-standard levels of
-// debug, info, success, warning, error
-
-.alert-debug {
-  background-color: $white;
-  border-color: $mint-green;
-  color: $black;
+body {
+  font-family: 'rentukkaregular';
+  font-size: 30px;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 36px;
+  letter-spacing: 0em;
+  color: $white;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.alert-error {
-  background-color: $pink;
-  border-color: $dark-pink;
-  color: $red;
+a {
+  color: $white;
+  &:hover {
+    color: $white;
+  }
+}
+
+.height-vh {
+  height: 100vh;
+  width: 0;
+}
+
+.accordion-header {
+  text-shadow: none;
+
+}
+.accordion-body {
+  text-shadow: none;
+  font-size: 20px;
+  line-height: 26px;
+  a {
+    color: $black;
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+h2 {
+  text-transform: uppercase;
+}
+
+.accordion-button:not(.collapsed),
+.accordion-button:focus {
+  color: $black;
+  background-color: $white;
+  box-shadow: none;
+}
+
+.background-image {
+  position:fixed;
+  top: 0;
+  left:0;
+  background-image: url('../images/hero-image.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: -10;
+}
+
+.over {
+  transform: rotate( -180deg );            
+  transition: transform 150ms ease-in-out;
+}
+
+.out {
+  transform: rotate( -360deg );            
+  transition: transform 150ms ease-in-out;
+}
+
+.logo-container {
+  position: fixed;
+  top: 10%;
+  left: 2%;
+}
+.logo-text {
+  display: flex;
+  transform: rotate(-5.2deg);
+  position: absolute;
+    bottom: -3rem;
+    left: 80px;
+    width: 100%;
+  .event-date,
+  .headline {
+    text-transform: uppercase;;
+    width: 50%;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  .headline {
+    padding-left: 1rem;
+    min-width: 300px;
+  }
+  .event-date {
+    text-align: right;
+    padding-right: 1rem;
+    position: relative;
+    &:after {
+      content: '';
+      width: 0;
+      height: calc(100% + 4rem);
+      position: absolute;
+      border: 1px solid $white;
+      top: 0;
+      right: 0;
+      margin-top: -2rem;
+    }
+  }
+}
+
+@include media-breakpoint-down(lg) { 
+  .logo-container {
+    position: static;
+    top: unset;
+    left: unset;
+  }
+  .logo-text {
+    margin-bottom: 4rem;
+    font-size: 28px;
+    position: static;
+    align-items: center;
+    .headline {
+      min-width: auto;
+    }
+  }
+  .height-vh {
+    display:none;
+  }
+  #logo {
+    width: 100%;
+    height: auto;
+    max-width: 480px;
+  }
+}
+
+.btn {
+  background-color: $white;
+  color: $black;
+  border-radius: 0;
+  border: 0;
+}
+
+.form-control {
+  border-radius: 0;
 }

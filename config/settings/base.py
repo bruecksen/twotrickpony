@@ -72,13 +72,25 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = [
     "crispy_forms",
     "crispy_bootstrap5",
-    "allauth",
-    "allauth.account",
-    "allauth.socialaccount",
+    'wagtail.contrib.forms',
+    'wagtail.contrib.redirects',
+    'wagtail.embeds',
+    'wagtail.sites',
+    'wagtail.users',
+    'wagtail.snippets',
+    'wagtail.documents',
+    'wagtail.images',
+    'wagtail.search',
+    'wagtail.admin',
+    'wagtail',
+
+    'modelcluster',
+    'taggit',
 ]
 
 LOCAL_APPS = [
     "twotrickpony.users",
+    "twotrickpony.pages",
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -94,7 +106,6 @@ MIGRATION_MODULES = {"sites": "twotrickpony.contrib.sites.migrations"}
 # https://docs.djangoproject.com/en/dev/ref/settings/#authentication-backends
 AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend",
-    "allauth.account.auth_backends.AuthenticationBackend",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#auth-user-model
 AUTH_USER_MODEL = "users.User"
@@ -136,6 +147,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'wagtail.contrib.redirects.middleware.RedirectMiddleware',
 ]
 
 # STATIC
@@ -181,7 +193,6 @@ TEMPLATES = [
                 "django.template.context_processors.static",
                 "django.template.context_processors.tz",
                 "django.contrib.messages.context_processors.messages",
-                "twotrickpony.users.context_processors.allauth_settings",
             ],
         },
     }
@@ -254,24 +265,5 @@ LOGGING = {
 }
 
 
-# django-allauth
-# ------------------------------------------------------------------------------
-ACCOUNT_ALLOW_REGISTRATION = env.bool("DJANGO_ACCOUNT_ALLOW_REGISTRATION", True)
-# https://django-allauth.readthedocs.io/en/latest/configuration.html
-ACCOUNT_AUTHENTICATION_METHOD = "username"
-# https://django-allauth.readthedocs.io/en/latest/configuration.html
-ACCOUNT_EMAIL_REQUIRED = True
-# https://django-allauth.readthedocs.io/en/latest/configuration.html
-ACCOUNT_EMAIL_VERIFICATION = "mandatory"
-# https://django-allauth.readthedocs.io/en/latest/configuration.html
-ACCOUNT_ADAPTER = "twotrickpony.users.adapters.AccountAdapter"
-# https://django-allauth.readthedocs.io/en/latest/forms.html
-ACCOUNT_FORMS = {"signup": "twotrickpony.users.forms.UserSignupForm"}
-# https://django-allauth.readthedocs.io/en/latest/configuration.html
-SOCIALACCOUNT_ADAPTER = "twotrickpony.users.adapters.SocialAccountAdapter"
-# https://django-allauth.readthedocs.io/en/latest/forms.html
-SOCIALACCOUNT_FORMS = {"signup": "twotrickpony.users.forms.UserSocialSignupForm"}
-
-
-# Your stuff...
-# ------------------------------------------------------------------------------
+WAGTAIL_SITE_NAME = 'Two Trick Pony'
+WAGTAILADMIN_BASE_URL = 'https://twotrickpony.de'

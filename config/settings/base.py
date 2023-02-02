@@ -263,3 +263,4 @@ LOGGING = {
 
 WAGTAIL_SITE_NAME = 'Two Trick Pony'
 WAGTAILADMIN_BASE_URL = 'https://twotrickpony.de'
+PASSWORD_REQUIRED_TEMPLATE = 'pages/password_required.html'

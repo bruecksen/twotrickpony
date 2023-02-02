@@ -12540,6 +12540,11 @@ body {
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+.small {
+  font-size: 20px;
+  line-height: 26px;
+}
+
 a {
   color: #fff;
 }
@@ -12591,6 +12596,13 @@ h2, .h2 {
   width: 100vw;
   height: 100vh;
   z-index: -10;
+}
+.background-image.blurry {
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
 }
 
 .over {
@@ -12689,6 +12701,10 @@ h2, .h2 {
   color: #000;
   border-radius: 0;
   border: 0;
+}
+.btn:hover {
+  background-color: #000;
+  color: #fff;
 }
 
 .form-control {

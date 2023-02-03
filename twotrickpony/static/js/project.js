@@ -19,6 +19,7 @@ if (rotate) {
     }, false );
     window.setTimeout(function() {rotate.className = 'over';}, 150);
     window.setTimeout(function() {rotate.className = 'out';}, 300);
+    window.setTimeout(function() {rotate.className = '';}, 450);
 }
 
 

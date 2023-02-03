@@ -12622,6 +12622,11 @@ h2, .h2 {
   -ms-filter: blur(5px);
   filter: blur(5px);
 }
+@media (max-width: 991.98px) {
+  .background-image {
+    background-attachment: scroll;
+  }
+}
 
 .over {
   -webkit-transform: rotate(-180deg);

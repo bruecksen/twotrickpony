@@ -115,6 +115,9 @@ h2 {
     -ms-filter: blur(5px);
     filter: blur(5px);
   }
+  @include media-breakpoint-down(lg) { 
+    background-attachment: scroll;
+  }
 }
 
 .over {

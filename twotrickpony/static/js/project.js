@@ -17,8 +17,8 @@ if (rotate) {
         window.setTimeout( function () { rotate.className = '' }, 150 );
     
     }, false );
-    window.setTimeout(function() {rotate.className = 'over';}, 200);
-    window.setTimeout(function() {rotate.className = 'out';}, 350);
+    window.setTimeout(function() {rotate.className = 'over';}, 150);
+    window.setTimeout(function() {rotate.className = 'out';}, 300);
 }
 
 

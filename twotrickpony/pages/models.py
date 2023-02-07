@@ -61,4 +61,4 @@ class HomePage(AbstractEmailForm):
                 address.append(field.value())
         if address:
             content = "{}\n\n-----\n{}".format(self.thank_you_email_text, self.render_email(form))
-            send_mail(self.subject, content, [self.to_address], address[0])
+            send_mail(self.subject, content, address, self.to_address)
